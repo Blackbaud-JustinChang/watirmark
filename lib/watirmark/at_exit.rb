@@ -2,6 +2,7 @@ module Watirmark
   def self.add_exit_task
     at_exit {
       puts "INSIDE EXIT CODE"
+      puts "$! = #{$!.inspect}"
       puts "$!.nil? = #{$!.nil?}"
       puts "$!.is_a?(SystemExit) = #{$!.is_a?(SystemExit)}"
       puts "$!.success? = #{$!.success?}"
