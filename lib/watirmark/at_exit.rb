@@ -26,7 +26,8 @@ module Watirmark
       end
 
       if $!.nil? || $!.is_a?(SystemExit) && $!.success?
-        code = 0
+        status = run(ARGV, $stderr, $stdout).to_i
+        code = status == 0 ? code = 0 : status
       else
         code = $!.is_a?(SystemExit) ? $!.status : 1
       end
