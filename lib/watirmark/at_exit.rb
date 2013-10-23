@@ -14,9 +14,9 @@ module Watirmark
       puts "$0 =  #{$0}"
       puts "$_ =  #{$_}"
       puts "$> =  #{$>}"
-      puts "$>.readlines =  #{$>.readlines}"
-      puts "$>.readlines =  #{$>.inspect}"
       puts "$FILENAME =  #{$FILENAME}"
+      status = run(ARGV, $stderr, $stdout).to_i
+      puts "STATUS FOR RUN = #{status}"
       puts "autorun_disabled? = #{RSpec::Core::Runner.autorun_disabled?}"
       puts "installed_at_exit? ? = #{RSpec::Core::Runner.installed_at_exit? }"
       puts "running_in_drb?? = #{RSpec::Core::Runner.running_in_drb?}"
