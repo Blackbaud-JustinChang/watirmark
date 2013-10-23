@@ -15,5 +15,9 @@ module Watirmark
       puts "EXIT CODE IS #{code}"
       exit code
     }
+  rescue Exception => e
+    puts "THERE WAS AN EXIT ISSUE"
+    puts e.inspect
+    puts e.backtrace.join "\n"
   end
 end
