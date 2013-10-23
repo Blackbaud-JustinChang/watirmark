@@ -5,7 +5,7 @@ module Watirmark
       puts "$! = #{$!.inspect}"
       puts "$!.nil? = #{$!.nil?}"
       puts "$!.is_a?(SystemExit) = #{$!.is_a?(SystemExit)}"
-      puts "$!.success? = #{$!.success?}" if $!
+      puts "$!.success? = #{$!.success?}" if $!.is_a?(SystemExit)
       if $!.nil? || $!.is_a?(SystemExit) && $!.success?
         code = 0
       else
