@@ -10,6 +10,9 @@ module Watirmark
       puts "$@ =  #{$@.inspect}"
       puts "$. =  #{$.}"
       puts "$? =  #{$?}"
+      puts "autorun_disabled? = #{RSpec::Core::Runner.autorun_disabled?}"
+      puts "installed_at_exit? ? = #{RSpec::Core::Runner.installed_at_exit? }"
+      puts "running_in_drb?? = #{RSpec::Core::Runner.running_in_drb?}"
       rescue
         puts "Exception thrown for exit"
       end
