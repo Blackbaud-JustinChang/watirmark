@@ -17,6 +17,7 @@ module Watirmark
       puts "$FILENAME =  #{$FILENAME}"
       status = run(ARGV, $stderr, $stdout).to_i
       puts "STATUS FOR RUN = #{status}"
+      puts "NEW STATUS IMPLEMENTED"
       puts "autorun_disabled? = #{RSpec::Core::Runner.autorun_disabled?}"
       puts "installed_at_exit? ? = #{RSpec::Core::Runner.installed_at_exit? }"
       puts "running_in_drb?? = #{RSpec::Core::Runner.running_in_drb?}"
@@ -26,8 +27,7 @@ module Watirmark
       end
 
       if $!.nil? || $!.is_a?(SystemExit) && $!.success?
-        status = run(ARGV, $stderr, $stdout).to_i
-        code = status == 0 ? code = 0 : status
+        code = status
       else
         code = $!.is_a?(SystemExit) ? $!.status : 1
       end
